@@ -69,3 +69,20 @@ console.log(getUsersWithAge(users, 30, 40));
 
 console.log(`ЗАДАНИЕ - 7`);
 // -----------7
+const calculateTotalBalance = users =>
+  users.reduce((acc, user) => acc + user.balance, 0);
+
+console.log(calculateTotalBalance(users)); // 20916
+
+console.log(`ЗАДАНИЕ - 8`);
+// -----------8
+const getUsersWithFriend = (users, friendName) =>
+  users.reduce((acc, user) => {
+    if (user.friends.includes(friendName)) {
+      acc.push(user.name);
+    }
+    return acc;
+  }, []);
+
+console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
