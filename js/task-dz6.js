@@ -83,11 +83,9 @@ console.log(`ЗАДАНИЕ - 10`);
 // -----------10
 const getSortedUniqueSkills = users =>
   users
-    .reduce((acc, user) => {
-      acc.push(...user.skills);
-      return acc;
-    }, [])
-    .sort();
+    .flatMap(user => user.skills)
+    .sort()
+    .filter((item, idx, arr) => arr.indexOf(item) === idx);
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
