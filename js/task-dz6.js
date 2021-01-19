@@ -74,10 +74,7 @@ const getNamesSortedByFriendsCount = users =>
     .sort(
       (priwUser, nextUser) => priwUser.friends.length - nextUser.friends.length,
     )
-    .reduce((acc, user) => {
-      acc.push(user.name);
-      return acc;
-    }, []);
+    .map(user => user.name);
 
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
