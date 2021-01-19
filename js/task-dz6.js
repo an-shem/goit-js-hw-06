@@ -2,11 +2,7 @@ import users from './users.js';
 
 console.log(`ЗАДАНИЕ - 1`);
 // ----------1
-const getUserNames = users =>
-  users.reduce((acc, user) => {
-    acc.push(user.name);
-    return acc;
-  }, []);
+const getUserNames = users => users.map(user => user.name);
 
 console.log(getUserNames(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Ross Vazquez', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony' ]
@@ -101,3 +97,16 @@ const getNamesSortedByFriendsCount = users =>
 
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+
+console.log(`ЗАДАНИЕ - 10`);
+// -----------10
+const getSortedUniqueSkills = users =>
+  users
+    .reduce((acc, user) => {
+      acc.push(...user.skills);
+      return acc;
+    }, [])
+    .sort();
+
+console.log(getSortedUniqueSkills(users));
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
