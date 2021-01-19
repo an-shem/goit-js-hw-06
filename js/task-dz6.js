@@ -86,3 +86,18 @@ const getUsersWithFriend = (users, friendName) =>
 
 console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
 console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+
+console.log(`ЗАДАНИЕ - 9`);
+// -----------9
+const getNamesSortedByFriendsCount = users =>
+  users
+    .sort(
+      (priwUser, nextUser) => priwUser.friends.length - nextUser.friends.length,
+    )
+    .reduce((acc, user) => {
+      acc.push(user.name);
+      return acc;
+    }, []);
+
+console.log(getNamesSortedByFriendsCount(users));
+// [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
